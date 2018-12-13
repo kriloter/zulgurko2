@@ -7,11 +7,17 @@
           ./build.nix
           ./networking.nix
           ./users.nix
+          ./virt.nix
   ];
 
   environment.systemPackages = with pkgs; [
-    vim screen git wget
+    vim screen git wget nixops
   ];
+
+  nix.useSandbox = true;
+
+  services.resolved.enable = false;
+  networking.nameservers = [ "172.18.2.10" "172.18.2.11" "208.67.222.222" "208.67.220.220" ];
 
   nix.gc.automatic = true;
   nix.gc.dates = "03:15";
@@ -31,7 +37,7 @@
     wheelNeedsPassword = false;
   };
 
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Bratislava";
 
   documentation.enable = true;
   services.nixosManual.enable = true;
