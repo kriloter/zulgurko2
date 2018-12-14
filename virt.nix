@@ -26,11 +26,11 @@ in
     # Your external IP here
     externalIP = "37.205.14.80";
     forwardPorts = [
-#      { destination = "192.168.122.105:80"; sourcePort = 80;}
-#      { destination = "192.168.122.105:443"; sourcePort = 443;}
-#      { destination = "192.168.122.105:22"; sourcePort = 6666;}
-#      { destination = "192.168.122.105:20"; sourcePort = 20;}
-#      { destination = "192.168.122.105:21"; sourcePort = 21;}
+      { destination = "192.168.122.100:80"; sourcePort = 80;}
+      { destination = "192.168.122.100:443"; sourcePort = 443;}
+      { destination = "192.168.122.100:22"; sourcePort = 6666;}
+#      { destination = "192.168.122.100:20"; sourcePort = 20;}
+#      { destination = "192.168.122.100:21"; sourcePort = 21;}
     ];
   };
   

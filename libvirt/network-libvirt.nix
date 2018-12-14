@@ -6,7 +6,7 @@ let
     deployment.libvirtd.vcpu = 2;
     # deployment image size in GB, default is 10GB
     deployment.libvirtd.baseImageSize = 30;
-#    deployment.libvirtd.networks = [ { type="bridge"; source="br0"; } ];
+    deployment.libvirtd.networks = [ { type="bridge"; source="br0"; } ];
     deployment.libvirtd.extraDevicesXML = ''
       <serial type='pty'>
         <target port='0'/>

@@ -1,3 +1,4 @@
+
 {
   network.description = "netX";
 
@@ -9,14 +10,23 @@
       ];
 
       environment.systemPackages = with pkgs; [
-      vim wget
       ];
-      
+
       nix.gc.automatic = true;
       nix.gc.dates = "03:15";
 
-
       networking.firewall.enable = false;
-  }; 
+
+      system.activationScripts.vhosts =
+        ''
+          mkdir -p /var/www/vhosts
+        '';
+
+      services.httpd = {
+        enable = true;
+        adminAddr = "admin@zulgur.com";
+      };
+      
+    }; 
 
 }
