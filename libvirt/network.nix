@@ -25,6 +25,21 @@
       services.httpd = {
         enable = true;
         adminAddr = "admin@zulgur.com";
+        extraModules = ["vhost_alias"];
+        extraConfig = ''
+           <Directory /var/www/>
+              Options Indexes FollowSymLinks
+              AllowOverride None
+              Require all granted
+           </Directory>
+          '';
+        virtualHosts = [
+           {extraConfig = ''
+             UseCanonicalName    Off
+             VirtualDocumentRoot "/var/www/vhosts/%-2.0.%-1.0/%-3/public_html/"
+            '';
+           }
+        ];
       };
       
     }; 
